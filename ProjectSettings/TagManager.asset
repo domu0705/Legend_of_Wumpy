@@ -7,6 +7,10 @@ TagManager:
   - Tile
   - Monster
   - FallBound
+  - Item
+  - Gold
+  - Heart
+  - World
   layers:
   - Default
   - TransparentFX

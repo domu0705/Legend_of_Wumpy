@@ -8,14 +8,23 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
     [SerializeField] private GameObject fallCamera = null;
     private bool isDead = false;
     public bool IsDead { get { return isDead; } }
+    public bool worldCollision = false;
+
     protected Animator animator = null;
+    protected Rigidbody rigid;
     protected OnTurnEnd onTurnEnd = null;
     protected bool isMyTurn = false;
-
+    protected bool pressR = false;
+    public int Gold;
+    public int Heart;
+    public int MaxHeart;
+    GameObject nearItem;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody>();
+        Gold = 0;
     }
 
     public void ReceiveTurn(OnTurnEnd onTurnEnd)
@@ -36,8 +45,11 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
     // Update is called once per frame
     void Update()
     {
+        
         if (isMyTurn)
-        {
+        {  
+            GetInput();
+            Interaction();
             if (Input.GetKeyDown(KeyCode.W))
             {
                 tileSelector.SetDir("W");
@@ -71,6 +83,33 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
         }
     }
 
+    void Interaction()// 아이템 먹기
+    {
+        if(nearItem != null)
+        {
+            if ((pressR) && (nearItem.tag == "Item"))
+            {
+                Item item = nearItem.GetComponent<Item>();
+                switch (item.type)
+                {
+                    case Item.Type.Gold:
+                        Gold += item.value;
+                        break;
+                    case Item.Type.Heart:
+                        Heart += item.value;
+                        if (Heart > MaxHeart)
+                            Heart = MaxHeart;
+                        break;
+                }
+                Destroy(nearItem);
+            }
+        }  
+    }
+
+    void GetInput() // 아이템 먹는 키 R을 누르는지 확인하기
+    {
+        pressR = Input.GetButtonDown("getItem");
+    }
     protected virtual void OnArrival()
     {
         SetPlayerCameraActive(false);
@@ -84,12 +123,15 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
         if (other.gameObject.tag == "Monster")
         {
             mover.Stop();
-            //GetComponent<BoxCollider>().enabled = false;
-            //GetComponent<Rigidbody>().isKinematic = true;
             if (isMyTurn && Vector3.Angle(transform.forward, other.transform.forward) < 120)
             {
                 animator.SetTrigger("Attack");
-            } else
+            } 
+            else if(Gold >=300){
+                Debug.Log("공격");
+                animator.SetTrigger("Attack");
+            }
+            else
             {
                 OnDeath();
             }
@@ -100,7 +142,32 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
     {
         if (other.gameObject.tag == "FallBound")
         {
-            OnDeath();
+            if (Heart <= 0)
+            {
+                OnDeath();
+            }
+            else
+            {
+                --Heart;
+                revive();
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Item")
+        {
+            nearItem = other.gameObject;
+        }
+    }
+
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Item")
+        {
+            nearItem = null;
         }
     }
 
@@ -109,6 +176,13 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
         SetPlayerCameraActive(true);
         fallCamera.SetActive(true);
         animator.SetTrigger("Die");
+        worldCollision = true;
+        Debug.Log("worldCollision : " + worldCollision);
+    }
+    protected virtual void revive()
+    {
+        transform.position = new Vector3(0, 7.5f, -8);
+
     }
 
     private void SetPlayerCameraActive(bool isActive)

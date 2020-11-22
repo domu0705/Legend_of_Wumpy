@@ -50,10 +50,14 @@ public class MonsterScript : PlayerScript
         if (other.gameObject.tag == "Player")
         {
             mover.Stop();
-            //GetComponent<BoxCollider>().enabled = false;
-            //GetComponent<Rigidbody>().isKinematic = true;
-            
-            if (isMyTurn)
+            PlayerScript player = other.gameObject.GetComponent<PlayerScript>();
+            if (player.Gold >= 300)
+            {
+                Debug.Log("몬스터 주금");
+                animator.SetTrigger("Die");
+                OnDeath();
+            }
+            else if (isMyTurn)
             {
                 Vector3 lookAtPos = other.transform.position;
                 lookAtPos.y = transform.position.y;
