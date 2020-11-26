@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour, ITurnReceiver
@@ -11,8 +12,7 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
     [SerializeField] private Text heartIndicator = null;
     [SerializeField] private Text goldIndicator = null;
     
-    private bool isDead = false;
-    public bool IsDead { get { return isDead; } }
+    public bool isDead = false;
     public bool worldCollision = false;
 
     protected Animator animator = null;
@@ -20,10 +20,10 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
     protected OnTurnEnd onTurnEnd = null;
     protected bool isMyTurn = false;
     protected bool pressR = false;
-    [SerializeField] public int Gold = 0;
+    [SerializeField] public int Gold;
     [SerializeField] public int MaxGold;
-    [SerializeField] public int Heart = 1;
-    [SerializeField] public int MaxHeart = 2;
+    [SerializeField] public int Heart;
+    [SerializeField] public int MaxHeart;
     GameObject nearItem;
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,7 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
         rigid = GetComponent<Rigidbody>();
         Gold = 0;
         UpdateHeartIndicator();
+        UpdateGoldIndicator();
     }
 
     public void ReceiveTurn(OnTurnEnd onTurnEnd)
@@ -132,11 +133,13 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
         if (other.gameObject.tag == "Monster")
         {
             mover.Stop();
+            /*
             if (isMyTurn && Vector3.Angle(transform.forward, other.transform.forward) < 120)
             {
                 animator.SetTrigger("Attack");
             } 
-            else if(Gold >=300){
+            */
+            if(Gold >=300){
                 Debug.Log("공격");
                 animator.SetTrigger("Attack");
             }
@@ -187,6 +190,7 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
         animator.SetTrigger("Die");
         worldCollision = true;
         Debug.Log("worldCollision : " + worldCollision);
+        isDead = true;
     }
     protected virtual void revive()
     {
@@ -215,7 +219,7 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
 
     private void UpdateHeartIndicator()
     {
-        heartIndicator.text = Heart.ToString();
+        heartIndicator.text = Heart.ToString() + '/' + MaxHeart.ToString();
     }
 
     private void UpdateGoldIndicator()

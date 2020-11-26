@@ -10,6 +10,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] private GameObject[] turnReceiverGameObjects = null;
     [SerializeField] private Text turnIndicator = null;
     [SerializeField] private GameObject player = null;
+    [SerializeField] private GameObject[] enemies = null;
     [SerializeField] private int currentStage = 1;
     [SerializeField] private GameObject stageClearUI = null;
     private List<ITurnReceiver> turnReceivers = new List<ITurnReceiver>();
@@ -29,6 +30,7 @@ public class GameManagerScript : MonoBehaviour
 
     void Update()
     {
+        checkPlayerDead();
         if (!stageClearUIOn)
         {
             checkClearCondition();
@@ -55,12 +57,21 @@ public class GameManagerScript : MonoBehaviour
         {
             SceneManager.LoadScene("GameClear");
         }
+        Debug.Log("Stage" + (currentStage + 1).ToString());
         SceneManager.LoadScene("Stage"+(currentStage+1).ToString());
     }
 
     public void RestartStage()
     {
         SceneManager.LoadScene("Stage"+ currentStage.ToString());
+    }
+
+    public void checkPlayerDead()
+    {
+        if (player.GetComponent<PlayerScript>().isDead)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     public void checkClearCondition()
@@ -73,7 +84,7 @@ public class GameManagerScript : MonoBehaviour
             }
         } else if (currentStage == 3)
         {
-            if (turnReceivers.Count == 1 && turnReceivers[0].GetCharacterName() == "player") ;
+            if (enemies[0].GetComponent<PlayerScript>().isDead)
             {
                 StageClear();
             }
