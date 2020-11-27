@@ -64,10 +64,12 @@ public class MonsterScript : PlayerScript
                 transform.LookAt(lookAtPos);
                 animator.SetTrigger("Attack");
             }
+            /*
             else if(Vector3.Angle(transform.forward, other.transform.forward) < 120)
             {
                 OnDeath();
             }
+            */
         }
     }
 

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour, ITurnReceiver
 {
@@ -6,8 +8,11 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
     [SerializeField] protected TileSelector tileSelector = null;
     [SerializeField] private GameObject playerCamera = null;
     [SerializeField] private GameObject fallCamera = null;
-    private bool isDead = false;
-    public bool IsDead { get { return isDead; } }
+    [SerializeField] public string nameOfCharacter = null;
+    [SerializeField] private Text heartIndicator = null;
+    [SerializeField] private Text goldIndicator = null;
+    
+    public bool isDead = false;
     public bool worldCollision = false;
 
     protected Animator animator = null;
@@ -15,9 +20,10 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
     protected OnTurnEnd onTurnEnd = null;
     protected bool isMyTurn = false;
     protected bool pressR = false;
-    public int Gold;
-    public int Heart;
-    public int MaxHeart;
+    [SerializeField] public int Gold;
+    [SerializeField] public int MaxGold;
+    [SerializeField] public int Heart;
+    [SerializeField] public int MaxHeart;
     GameObject nearItem;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +31,8 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
         Gold = 0;
+        UpdateHeartIndicator();
+        UpdateGoldIndicator();
     }
 
     public void ReceiveTurn(OnTurnEnd onTurnEnd)
@@ -94,11 +102,13 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
                 {
                     case Item.Type.Gold:
                         Gold += item.value;
+                        UpdateGoldIndicator();
                         break;
                     case Item.Type.Heart:
                         Heart += item.value;
                         if (Heart > MaxHeart)
                             Heart = MaxHeart;
+                        UpdateHeartIndicator();
                         break;
                 }
                 Destroy(nearItem);
@@ -123,11 +133,13 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
         if (other.gameObject.tag == "Monster")
         {
             mover.Stop();
+            /*
             if (isMyTurn && Vector3.Angle(transform.forward, other.transform.forward) < 120)
             {
                 animator.SetTrigger("Attack");
             } 
-            else if(Gold >=300){
+            */
+            if(Gold >=300){
                 Debug.Log("공격");
                 animator.SetTrigger("Attack");
             }
@@ -178,6 +190,7 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
         animator.SetTrigger("Die");
         worldCollision = true;
         Debug.Log("worldCollision : " + worldCollision);
+        isDead = true;
     }
     protected virtual void revive()
     {
@@ -191,5 +204,26 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
         {
             playerCamera.SetActive(isActive);
         }
+    }
+
+    public string GetCharacterName()
+    {
+        return nameOfCharacter;
+    }
+
+    public int GetGold()
+    {
+        return Gold;
+    }
+
+
+    private void UpdateHeartIndicator()
+    {
+        heartIndicator.text = Heart.ToString() + '/' + MaxHeart.ToString();
+    }
+
+    private void UpdateGoldIndicator()
+    {
+        goldIndicator.text = (Gold/100).ToString()+'/'+MaxGold.ToString();
     }
 }

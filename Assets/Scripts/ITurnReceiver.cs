@@ -2,4 +2,5 @@
 public interface ITurnReceiver
 {
     void ReceiveTurn(OnTurnEnd onTurnEnd);
+    string GetCharacterName();
 }
