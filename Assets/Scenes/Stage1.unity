@@ -23217,7 +23217,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -56342,6 +56342,11 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 3.7
       objectReference: {fileID: 0}
+    - target: {fileID: 4045115268979223977, guid: 3e1b33ab945f7dd45addfe7c1cbf19bc,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 4045115268979223978, guid: 3e1b33ab945f7dd45addfe7c1cbf19bc,
         type: 3}
       propertyPath: fallCamera
@@ -56372,6 +56377,11 @@ PrefabInstance:
       propertyPath: goldIndicator
       value: 
       objectReference: {fileID: 353907469}
+    - target: {fileID: 4045115268979223978, guid: 3e1b33ab945f7dd45addfe7c1cbf19bc,
+        type: 3}
+      propertyPath: Heart
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4045823861951275414, guid: 3e1b33ab945f7dd45addfe7c1cbf19bc,
         type: 3}
       propertyPath: m_Name

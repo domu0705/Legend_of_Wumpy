@@ -196,7 +196,9 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
     protected virtual void revive()
     {
         Debug.Log("revive");
+        mover.Stop();
         transform.position = new Vector3(0, 7.5f, -8);
+        OnArrival();
 
     }
 
