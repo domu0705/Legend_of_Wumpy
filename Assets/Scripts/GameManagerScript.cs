@@ -13,6 +13,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] private GameObject[] enemies = null;
     [SerializeField] private int currentStage = 1;
     [SerializeField] private GameObject stageClearUI = null;
+    [SerializeField] private Text stageIndicator = null;
     private List<ITurnReceiver> turnReceivers = new List<ITurnReceiver>();
     private int currentIndex = 0;
     private bool stageClearUIOn = false;
@@ -25,6 +26,7 @@ public class GameManagerScript : MonoBehaviour
             turnReceivers.Add(turnReceiverGameObjects[i].GetComponent<ITurnReceiver>());
         }
         stageClearUI.SetActive(false);
+        setStageIndicator();
         GiveTurn();
     }
 
@@ -72,6 +74,11 @@ public class GameManagerScript : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+    }
+
+    public void setStageIndicator()
+    {
+        stageIndicator.text = "Stage" + currentStage.ToString();
     }
 
     public void checkClearCondition()

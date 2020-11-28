@@ -16365,6 +16365,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4708728983680393782, guid: 3b8ffe5acdef6574c9f5426eb0a9646d,
+        type: 3}
+      propertyPath: m_Text
+      value: Stage 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4708728983748960390, guid: 3b8ffe5acdef6574c9f5426eb0a9646d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -16514,6 +16519,18 @@ MonoBehaviour:
 --- !u!114 &780947669 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4708728983748960391, guid: 3b8ffe5acdef6574c9f5426eb0a9646d,
+    type: 3}
+  m_PrefabInstance: {fileID: 780947666}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &780947670 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4708728983680393782, guid: 3b8ffe5acdef6574c9f5426eb0a9646d,
     type: 3}
   m_PrefabInstance: {fileID: 780947666}
   m_PrefabAsset: {fileID: 0}
@@ -17536,6 +17553,7 @@ MonoBehaviour:
   enemies: []
   currentStage: 2
   stageClearUI: {fileID: 1034530742}
+  stageIndicator: {fileID: 780947670}
 --- !u!1001 &861035859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19742,6 +19760,7 @@ MonoBehaviour:
   enemies: []
   currentStage: 2
   stageClearUI: {fileID: 1034530742}
+  stageIndicator: {fileID: 780947670}
 --- !u!4 &1019444067
 Transform:
   m_ObjectHideFlags: 0
@@ -56127,6 +56146,7 @@ MonoBehaviour:
   enemies: []
   currentStage: 2
   stageClearUI: {fileID: 1034530742}
+  stageIndicator: {fileID: 780947670}
 --- !u!1001 &1987972993
 PrefabInstance:
   m_ObjectHideFlags: 0
