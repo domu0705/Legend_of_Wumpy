@@ -161,6 +161,7 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
             else
             {
                 --Heart;
+                UpdateHeartIndicator();
                 revive();
             }
         }
@@ -194,6 +195,7 @@ public class PlayerScript : MonoBehaviour, ITurnReceiver
     }
     protected virtual void revive()
     {
+        Debug.Log("revive");
         transform.position = new Vector3(0, 7.5f, -8);
 
     }

@@ -3122,7 +3122,12 @@ PrefabInstance:
     - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
         type: 3}
       propertyPath: MaxHeart
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
+        type: 3}
+      propertyPath: MaxGold
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5422921082439705058, guid: a25f1503ca9eee24d997f98c6c5c7876,
         type: 3}
@@ -19758,7 +19763,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019444065}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 18fa7f85faaee95408b6f749a5990a23, type: 3}
@@ -20715,6 +20720,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Game End UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078622, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078622, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078622, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078622, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.65882355
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078623, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078623, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5951933530567031030, guid: 08502d28d9be54547be59eea195d415f,
         type: 3}
@@ -59805,12 +59840,12 @@ PrefabInstance:
     - target: {fileID: 4045115268979223978, guid: 3e1b33ab945f7dd45addfe7c1cbf19bc,
         type: 3}
       propertyPath: MaxHeart
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4045115268979223978, guid: 3e1b33ab945f7dd45addfe7c1cbf19bc,
         type: 3}
       propertyPath: Heart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4045115268979223978, guid: 3e1b33ab945f7dd45addfe7c1cbf19bc,
         type: 3}
@@ -59831,6 +59866,11 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxGold
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045115268979223978, guid: 3e1b33ab945f7dd45addfe7c1cbf19bc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4045823861951275414, guid: 3e1b33ab945f7dd45addfe7c1cbf19bc,
         type: 3}
@@ -60152,7 +60192,12 @@ PrefabInstance:
     - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
         type: 3}
       propertyPath: MaxHeart
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
+        type: 3}
+      propertyPath: MaxGold
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5422921082439705058, guid: a25f1503ca9eee24d997f98c6c5c7876,
         type: 3}

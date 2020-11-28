@@ -2873,6 +2873,21 @@ PrefabInstance:
       propertyPath: moves.Array.data[7]
       value: W
       objectReference: {fileID: 0}
+    - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
+        type: 3}
+      propertyPath: MaxGold
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
+        type: 3}
+      propertyPath: heartIndicator
+      value: 
+      objectReference: {fileID: 1728509733}
+    - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
+        type: 3}
+      propertyPath: goldIndicator
+      value: 
+      objectReference: {fileID: 353907469}
     - target: {fileID: 5422921082439705058, guid: a25f1503ca9eee24d997f98c6c5c7876,
         type: 3}
       propertyPath: m_IsTrigger
@@ -23171,6 +23186,7 @@ MonoBehaviour:
   - {fileID: 1975193444825029}
   turnIndicator: {fileID: 863274892}
   player: {fileID: 1835884144101593}
+  enemies: []
   currentStage: 1
   stageClearUI: {fileID: 548400112}
 --- !u!4 &1019444067
@@ -23194,7 +23210,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019444065}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 013251c2b047f564ba21cb7da2daf341, type: 3}
@@ -56757,6 +56773,21 @@ PrefabInstance:
       propertyPath: nameOfCharacter
       value: Wumpy
       objectReference: {fileID: 0}
+    - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
+        type: 3}
+      propertyPath: MaxGold
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
+        type: 3}
+      propertyPath: heartIndicator
+      value: 
+      objectReference: {fileID: 1728509733}
+    - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
+        type: 3}
+      propertyPath: goldIndicator
+      value: 
+      objectReference: {fileID: 353907469}
     - target: {fileID: 5422921082439705058, guid: a25f1503ca9eee24d997f98c6c5c7876,
         type: 3}
       propertyPath: m_IsTrigger
@@ -56833,14 +56864,54 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5951933529720229852, guid: 08502d28d9be54547be59eea195d415f,
         type: 3}
+      propertyPath: turnReceiverGameObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933529720229852, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1835884144101593}
+    - target: {fileID: 5951933529720229852, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: turnReceiverGameObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1835884144101593}
+    - target: {fileID: 5951933529720229852, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: turnReceiverGameObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1975193444825029}
+    - target: {fileID: 5951933529720229852, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: turnIndicator
+      value: 
+      objectReference: {fileID: 863274892}
+    - target: {fileID: 5951933530351181015, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: turnReceiverGameObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5951933530351181015, guid: 08502d28d9be54547be59eea195d415f,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1835884144101593}
+    - target: {fileID: 5951933530351181015, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: turnReceiverGameObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1835884144101593}
+    - target: {fileID: 5951933530351181015, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: turnReceiverGameObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1975193444825029}
+    - target: {fileID: 5951933530351181015, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: turnIndicator
+      value: 
+      objectReference: {fileID: 863274892}
     - target: {fileID: 5951933530406387232, guid: 08502d28d9be54547be59eea195d415f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -56950,6 +57021,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Game End UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078622, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078622, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078622, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078622, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.65882355
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078623, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530486078623, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951933530567031030, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08502d28d9be54547be59eea195d415f, type: 3}

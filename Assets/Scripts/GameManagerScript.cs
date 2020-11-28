@@ -78,7 +78,7 @@ public class GameManagerScript : MonoBehaviour
     {
         if (currentStage == 1 || currentStage == 2)
         {
-            if (player.GetComponent<PlayerScript>().Gold == 100)
+            if (player.GetComponent<PlayerScript>().Gold == 200)
             {
                 stageClearUI.SetActive(true);
             }
@@ -89,5 +89,10 @@ public class GameManagerScript : MonoBehaviour
                 StageClear();
             }
         }
+    }
+
+    public void endGame()
+    {
+        Application.Quit();
     }
 }
