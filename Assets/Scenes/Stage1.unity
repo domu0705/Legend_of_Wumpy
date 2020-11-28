@@ -23189,6 +23189,7 @@ MonoBehaviour:
   enemies: []
   currentStage: 1
   stageClearUI: {fileID: 548400112}
+  stageIndicator: {fileID: 4708728985376757667}
 --- !u!4 &1019444067
 Transform:
   m_ObjectHideFlags: 0
@@ -56568,6 +56569,18 @@ PrefabInstance:
       objectReference: {fileID: 1231063498}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b8ffe5acdef6574c9f5426eb0a9646d, type: 3}
+--- !u!114 &4708728985376757667 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4708728983680393782, guid: 3b8ffe5acdef6574c9f5426eb0a9646d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4708728985376757666}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4764526795100146891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56897,6 +56910,11 @@ PrefabInstance:
       propertyPath: turnIndicator
       value: 
       objectReference: {fileID: 863274892}
+    - target: {fileID: 5951933529720229852, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: stageIndicator
+      value: 
+      objectReference: {fileID: 4708728985376757667}
     - target: {fileID: 5951933530351181015, guid: 08502d28d9be54547be59eea195d415f,
         type: 3}
       propertyPath: turnReceiverGameObjects.Array.size
@@ -56922,6 +56940,11 @@ PrefabInstance:
       propertyPath: turnIndicator
       value: 
       objectReference: {fileID: 863274892}
+    - target: {fileID: 5951933530351181015, guid: 08502d28d9be54547be59eea195d415f,
+        type: 3}
+      propertyPath: stageIndicator
+      value: 
+      objectReference: {fileID: 4708728985376757667}
     - target: {fileID: 5951933530406387232, guid: 08502d28d9be54547be59eea195d415f,
         type: 3}
       propertyPath: m_LocalPosition.x
