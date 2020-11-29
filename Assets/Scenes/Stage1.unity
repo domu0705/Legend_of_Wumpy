@@ -2888,6 +2888,11 @@ PrefabInstance:
       propertyPath: goldIndicator
       value: 
       objectReference: {fileID: 353907469}
+    - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
+        type: 3}
+      propertyPath: MaxHeart
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5422921082439705058, guid: a25f1503ca9eee24d997f98c6c5c7876,
         type: 3}
       propertyPath: m_IsTrigger
@@ -23216,7 +23221,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 013251c2b047f564ba21cb7da2daf341, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -56381,7 +56386,7 @@ PrefabInstance:
     - target: {fileID: 4045115268979223978, guid: 3e1b33ab945f7dd45addfe7c1cbf19bc,
         type: 3}
       propertyPath: Heart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4045823861951275414, guid: 3e1b33ab945f7dd45addfe7c1cbf19bc,
         type: 3}
@@ -56811,6 +56816,11 @@ PrefabInstance:
       propertyPath: goldIndicator
       value: 
       objectReference: {fileID: 353907469}
+    - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
+        type: 3}
+      propertyPath: MaxHeart
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5422921082439705058, guid: a25f1503ca9eee24d997f98c6c5c7876,
         type: 3}
       propertyPath: m_IsTrigger

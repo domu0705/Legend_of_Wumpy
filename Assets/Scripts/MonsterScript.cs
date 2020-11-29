@@ -55,6 +55,7 @@ public class MonsterScript : PlayerScript
             {
                 Debug.Log("몬스터 주금");
                 animator.SetTrigger("Die");
+                //Invoke("OnDeath", 2);
                 OnDeath();
             }
             else if (isMyTurn)
