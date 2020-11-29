@@ -57,7 +57,7 @@ public class GameManagerScript : MonoBehaviour
     {
         if (currentStage == 3)
         {
-            SceneManager.LoadScene("GameClear");
+            Invoke("loadGameClearScene", 2);
         }
         Debug.Log("Stage" + (currentStage + 1).ToString());
         SceneManager.LoadScene("Stage"+(currentStage+1).ToString());
@@ -72,8 +72,18 @@ public class GameManagerScript : MonoBehaviour
     {
         if (player.GetComponent<PlayerScript>().isDead)
         {
-            SceneManager.LoadScene("GameOver");
+            Invoke("loadGameEndScene", 2);
         }
+    }
+
+    public void loadGameEndScene()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
+    public void loadGameClearScene()
+    {
+        SceneManager.LoadScene("GameClear");
     }
 
     public void setStageIndicator()
