@@ -65994,6 +65994,11 @@ PrefabInstance:
       propertyPath: MaxGold
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5422921082439705057, guid: a25f1503ca9eee24d997f98c6c5c7876,
+        type: 3}
+      propertyPath: MaxHeart
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5422921082439705058, guid: a25f1503ca9eee24d997f98c6c5c7876,
         type: 3}
       propertyPath: m_IsTrigger
